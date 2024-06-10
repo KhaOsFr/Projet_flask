@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block content %}
+    <br>
+    <div class="page">
+        <h2 class="titre">Sportifs participant à cet évènement</h2>
+        <table class="table table-dark table-hover" style="text-align: center; vertical-align: middle;">
+            <thead>
+            <tr>
+                <th scope="col">Photo</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Âge</th>
+                <th scope="col">Nationnalité</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for sportifs in sportifs %}
+            <tr>
+                <td id="{{ sportifs.id_sportif }}" name="img"><img
+                        src="/static/images/{{ sportifs.img_s }}" height="90px"></td>
+                <td id="{{ sportifs.id_sportif }}"
+                    name="nom">{{ sportifs.nom }}
+                </td>
+                <td id="{{ sportifs.id_sportif }}"
+                    name="prenom">{{ sportifs.prenom }}
+                </td>
+                <td id="{{ sportifs.id_sportif }}"
+                    name="age">{{ sportifs.age }}
+                </td>
+                <td id="{{ sportifs.id_sportif }}" name="pays">{{ sportifs.pays }}
+                    <br><br>
+                    <img src="/static/images/{{ sportifs.img_p }}" height="30px" alt="pays"></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

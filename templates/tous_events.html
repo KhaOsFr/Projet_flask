@@ -15,10 +15,10 @@
             </tr>
             </thead>
             <tbody>
-            {% for events in liste_e: %}
+            {% for events in liste_e %}
                 <tr>
                     <td id="{{ events.id_event }}" name="img_event">
-                        <a href="">
+                        <a href="{{ url_for('sportifs_by_event', id_event=events.id_event) }}">
                             <img src="/static/images/{{ events.img_e }}" height="250px"
                                  alt="...">
                         </a>

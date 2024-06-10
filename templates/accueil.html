@@ -1,6 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
     <br>
-    <h2>Accueil</h2>
-    <button class="btn btn-primary">Un bouton bt</button>
+    <div class="page" style="text-align: center">
+        <h2 class="titre">Bienvenue sur notre site d'événements sportifs<br><br></h2>
+        <div id="carouselExampleAutoplaying" class="carousel slide carousel-dark" data-bs-ride="carousel"
+             style="max-width: 80%; margin: 0 auto">
+            <div class="carousel-inner">
+                {% for events in liste_e %}
+                    <div class="carousel-item active {% if events.is_active %}active{% endif %}">
+                        <img src="/static/images/{{ events.img_e }}" class="d-block w-100" alt="...">
+                    </div>
+                {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 {% endblock content %}
